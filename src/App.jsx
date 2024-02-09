@@ -1,10 +1,11 @@
 import React from "react";
-import Quiz from "./assets/Components/Quiz/Quiz";
+import Quiz from "./Components/Quiz/Quiz";
+
 
 const App = () => {
   return (
     <React.Fragment>
-      <Quiz />
+      <Quiz/>
     </React.Fragment>
   );
 };

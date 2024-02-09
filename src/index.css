@@ -2,3 +2,8 @@
   margin: 0;
   padding: 0;
 }
+body{
+  height: 100vh;
+  background-image: linear-gradient(#7daacc,#07c5e2);
+  font-family: 'Lora';
+}
