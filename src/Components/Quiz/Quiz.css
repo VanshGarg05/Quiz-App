@@ -89,11 +89,11 @@
 
 .Correct {
   color: rgba(0, 0, 0, 0.8);
-  background: rgba(0, 255, 0, 0.55);
+  background: rgba(0, 255, 0, 0.42);
   border-color: #db5548;
 }
 
 .Wrong {
-  background: rgba(255, 0, 0, 0.52);
+  background: rgba(255, 0, 0, 0.42);
   border-color: #db5448;
 }
