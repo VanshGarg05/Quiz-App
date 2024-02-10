@@ -6,6 +6,7 @@ const Quiz = () => {
   let [question, setquestion] = useState(data[index]);
   let [lock,setLock] =useState(false);
   let [score,setScore] = useState(0);
+  let [result,setResult] = useState(false);
 
   let Option1 = useRef(null);
   let Option2 = useRef(null);
@@ -20,7 +21,8 @@ const Quiz = () => {
         if (question.ans == ans) {
             e.target.classList.add("Correct");
             setLock(true);
-            setScore(prev=prev+1);
+            setScore(prev=>prev+1);
+            console.log(score);
           }
             else {
             e.target.classList.add("Wrong");
@@ -33,10 +35,19 @@ const Quiz = () => {
 
   const next = ()=>{
     if (lock===true){
+        if (index === data.length -1){
+            setResult(true);
+            return 0;
+        }
         setIndex(++index);
         setquestion(data[index]);
         setLock(false);
-
+        option_array.map((Options)=>{
+            Options.current.classList.remove("Wrong");
+            Options.current.classList.remove("Correct");
+            return null;
+            
+        })
 
     }
   }
@@ -45,7 +56,7 @@ const Quiz = () => {
     <div className="container">
       <h1>Quiz App</h1>
       <hr />
-      <h2>
+      {result?<></>:<><h2>
         {index + 1}. {question.question}
       </h2>
       <ul>
@@ -55,7 +66,12 @@ const Quiz = () => {
         <li ref={Option4} onClick={(e)=>{checkAns(e, 4);}}>{question.option4}</li>
       </ul>
       <button onClick={next}>Next</button>
-      <div className="index">{index+1} of {data.length} Questions</div>
+      <div className="index">{index+1} of {data.length} Questions</div></>}
+      {result?<>
+      <h2>You Scored {score} out of {data.length}</h2>
+      <button>Reset</button>
+      </>:<></>}
+      
     </div>
   )
 }
