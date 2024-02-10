@@ -5,6 +5,7 @@ const Quiz = () => {
   let [index, setIndex] = useState(0);
   let [question, setquestion] = useState(data[index]);
   let [lock,setLock] =useState(false);
+  let [score,setScore] = useState(0);
 
   let Option1 = useRef(null);
   let Option2 = useRef(null);
@@ -12,20 +13,32 @@ const Quiz = () => {
   let Option4 = useRef(null);
 
   let option_array = [Option1,Option2,Option3,Option4];
-
+  
 
   const checkAns = (e, ans) => {
     if (lock == false) {
         if (question.ans == ans) {
             e.target.classList.add("Correct");
             setLock(true);
-          } else {
+            setScore(prev=prev+1);
+          }
+            else {
             e.target.classList.add("Wrong");
             setLock(true);
             option_array[question.ans-1].current.classList.add("Correct")
           } 
     }
     
+  }
+
+  const next = ()=>{
+    if (lock===true){
+        setIndex(++index);
+        setquestion(data[index]);
+        setLock(false);
+
+
+    }
   }
 
   return (
@@ -41,8 +54,8 @@ const Quiz = () => {
         <li ref={Option3} onClick={(e)=>{checkAns(e, 3);}}>{question.option3}</li>
         <li ref={Option4} onClick={(e)=>{checkAns(e, 4);}}>{question.option4}</li>
       </ul>
-      <button>Next</button>
-      <div className="index">1 of 5 Questions</div>
+      <button onClick={next}>Next</button>
+      <div className="index">{index+1} of {data.length} Questions</div>
     </div>
   )
 }
