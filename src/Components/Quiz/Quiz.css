@@ -1,57 +1,99 @@
-.container{
-    width: 640px;
-    margin: auto;
-    margin-top: 150px;
-    background: white;
-    color: blue;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border-radius: 10px;
-    padding: 40px 50px;
-}
-.container hr{
-    height: 2px;
-    border: none;
-    background:#db5548 ;
-}
-.container h2{
-    font-size: 27px;
-    font-weight: 500;
-}
-.container ul li{
-    display: flex;
-    align-items: center;
-    height: 70px;
-    padding-left: 15px;
-    border: 1px solid #c91790;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    cursor: pointer;
-}
-.container button{
-    margin: auto;
-    width: 250px;
-    height: 65px;
-    background: #0acae3;
-    color: aliceblue;
-    font-size: 25px;
-    font-weight: 500;
-    border-radius: 8px;
-    cursor: pointer;
-}
-.container .index{
-    margin: auto;
-    font-size: 18px;
-
-}
-.Correct{
-    background: #dffff2;
-    border-color: #17c94c;
+.outer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.Wrong{
-    background: rgb(255, 180, 180);
-    border-color: #db5548;
+.container {
+  width: 640px;
+  margin: auto;
+  background: #eff6e0;
+  color: #124559;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 2rem 3rem;
+  box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.container hr {
+  height: 0.1rem;
+  background: #121212;
+}
+
+.container h1 {
+  color: #ef476f;
+  font-size: 2rem;
+}
+
+.container h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #121212;
+}
+
+.container ul li {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  padding-left: 15px;
+  color: rgba(0, 0, 0, 0.8);
+  border: 0.1rem solid #121212;
+  border-radius: 0.65rem;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+.container button {
+  margin: auto;
+  width: 10rem;
+  height: 3rem;
+  font-size: 1.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+    letter-spacing: 0.25rem;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  will-change: box-shadow, transform;
+  background: rgb(239, 259, 225);
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+  padding: 0 32px;
+  border-radius: 6px;
+  color: #121212;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.container button:hover {
+  box-shadow: 0px 4px 8px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+  transform: translateY(-2px);
+}
+.container button:active {
+  box-shadow: inset 0px 3px 7px #d6d6e7;
+  transform: translateY(2px);
+}
+
+.container .index {
+  margin: auto;
+  font-size: 0.75rem;
+  color: rgb(65, 74, 76);
+}
+
+.Correct {
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 255, 0, 0.55);
+  border-color: #db5548;
+}
+
+.Wrong {
+  background: rgba(255, 0, 0, 0.52);
+  border-color: #db5448;
 }

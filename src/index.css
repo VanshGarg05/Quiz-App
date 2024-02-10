@@ -4,6 +4,8 @@
 }
 body{
   height: 100vh;
-  background-image: linear-gradient(#7daacc,#07c5e2);
+  /* background-image: linear-gradient(#000000,#676c6d); */
+  background-image: url("./assets/bg_texture.png");
+  background-color: #003d40;
   font-family: 'Lora';
 }
